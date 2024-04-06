@@ -1,33 +1,38 @@
 <template>
     <div class="AppDrawerPriceInfo">
         <div class="AppDrawerPriceInfo_headerBox">
-            <article class="AppDrawerPriceInfo_headerBox_text">价格信息</article>
-            <LTag content="二级工艺" background="#DEECFC" icon="el-icon-warning-outline"
-                tips="当前订单在CNT【6.5<CMT价格<8】    优选‘外车车缝+尾部，次选‘外车车缝’,不合理‘本厂’" />
-            <LTag content="排单不合理" background="#FCE9DE" icon="el-icon-info" color="#FF7D00" />
+            <article class="AppDrawerPriceInfo_headerBox_text">价格信息
+                <div class="AppDrawerPriceInfo_headerBox_text_tagBox">
+                    <LTag content="二级工艺" background="#DEECFC" icon="el-icon-warning-outline"
+                        tips="当前订单在CNT【6.5<CMT价格<8】    优选‘外车车缝+尾部，次选‘外车车缝’,不合理‘本厂’" />
+                    <LTag content="排单不合理" background="#FCE9DE" icon="el-icon-info" color="#FF7D00" />
+                </div>
 
+            </article>
+
+            <el-button size="small">历史排单</el-button>
         </div>
         <div class="girdBox">
 
-            <div class="girdBoxTitle" v-for="(items, index ) of list.slice(0,4)" :key="index">
+            <div class="girdBoxTitle" v-for="(items, index ) of list.slice(0, 4)" :key="index">
                 <span class="girdBoxTitle_text">{{ items.title }}</span>
                 <span class="girdBoxTitle_desc">{{ items.desc }}</span>
-             
+
             </div>
         </div>
-      
 
-                <div class="gird2Box">
 
-                <div class="girdBoxTitle" v-for="(items, index ) of list.slice(4)" :key="index">
-                    <span class="girdBoxTitle_text">{{ items.title }}</span>
-                    <span class="girdBoxTitle_desc">{{ items.desc }}</span>
-                    <span class="girdBoxTitle_elseDesc" v-if="items.elseDesc">
-                        <span v-for="(desc, descIndex) of items.elseDesc" :key="descIndex">
-                            {{ desc }}</span>
-                    </span>
-                </div>
+        <div class="gird2Box">
+
+            <div class="girdBoxTitle" v-for="(items, index ) of list.slice(4)" :key="index">
+                <span class="girdBoxTitle_text">{{ items.title }}</span>
+                <span class="girdBoxTitle_desc">{{ items.desc }}</span>
+                <span class="girdBoxTitle_elseDesc" v-if="items.elseDesc">
+                    <span v-for="(desc, descIndex) of items.elseDesc" :key="descIndex">
+                        {{ desc }}</span>
+                </span>
             </div>
+        </div>
     </div>
 </template>
 
@@ -72,6 +77,7 @@ export default {
     display: flex;
     align-items: center;
     margin: 10px 0;
+    justify-content: space-between;
 }
 
 .tagClass {
@@ -97,7 +103,7 @@ export default {
 .girdBoxTitle_text {
     color: #7F8790;
     min-width: 100px;
-        display: block;
+    display: block;
     text-align: end;
 }
 
@@ -107,13 +113,19 @@ export default {
 }
 
 
-
+.AppDrawerPriceInfo_headerBox_text{
+    display: flex;
+}
+.AppDrawerPriceInfo_headerBox_text_tagBox{
+    display: flex;
+}
 .girdBoxTitle_elseDesc {
     display: flex;
     flex-direction: column;
     color: #FF7D00;
 }
-.gird2Box{
+
+.gird2Box {
     display: grid;
 
 }

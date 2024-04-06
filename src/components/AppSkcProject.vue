@@ -1,9 +1,6 @@
 <template>
     <div class="AppSkcProject">
-        <header class="AppSkcProject_header">
-            <span>同SKC+同加工项目</span>
 
-        </header>
         <el-card>
             <div class="AppSkcProject_mainbox">
                 <article class="AppSkcProject_mainbox_article">DE78675458671 </article>
@@ -60,14 +57,11 @@ export default {
 <style scoped>
 .AppSkcProject {
 
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 
 
-.AppSkcProject_header {
-    font-size: 12px;
-    padding: 10px 0;
-}
+
 
 .AppapplyProcess_text {
     font-size: 12px;
