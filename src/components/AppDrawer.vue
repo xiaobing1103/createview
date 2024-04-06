@@ -2,88 +2,115 @@
     <el-drawer size="1000px" title="排单审核" :visible="drawer" :direction="direction" :before-close="handleBeforeClose">
         <div class="container">
             <el-card>
-                <div class="Dheader">
-                    <div class="Dheader_right">
-                        <article class="Dheader_right_article"> NB7896764654</article>
-                        <el-tag class="tagClass">客户</el-tag>
-                        <el-tag class="tagClass" effect="dark">首</el-tag>
-                        <el-tag class="tagClass" type="info">卡其色</el-tag>
-                    </div>
-                    <div class="Dheader_left" @click="changeHeight">
-                        收起
+                <div ref="containerBox">
+                    <div class="Dheader">
+                        <div class="Dheader_right">
+                            <article class="Dheader_right_article"> NB7896764654</article>
+                            <LTag content="客户" color="#2C68FF" background="#DEECFC" />
+                            <LTag content="首" background="#2C68FF" color="#fff" />
+                            <LTag content="卡其色" background="#E3E6EB " />
+                        </div>
+                        <div class="Dheader_left" @click="changeHeight">
+                            收起
 
-                        <i :class="isChangeHeight ? 'el-icon-arrow-down' : 'el-icon-arrow-up'"></i>
+                            <i :class="isChangeHeight ? 'el-icon-arrow-down' : 'el-icon-arrow-up'"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="Dcontent" ref="Dcontent">
-                    <div class="Dcontent_imageBox">
-                        <div class="Dcontent_imageBox_title">订单信息</div>
-                        <div class="Dcontent_imageBox_mainBox">
-                            <div class="Dcontent_imageBox_leftBox">
-                                <img class="Dcontent_imageBox_leftBox_imgBox"
-                                    src="http://ai-img-1foo.oss-cn-guangzhou.aliyuncs.com/2024/04/01/1711951755.41028794f370fcb888f51e7c8e40fa2428a2b49.png">
-                            </div>
-                            <div class="Dcontent_imageBox_rightBox">
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        订单编号:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">NB7896764654</span>
+                    <div class="Dcontent">
+                        <div class="Dcontent_imageBox">
+                            <div class="Dcontent_imageBox_title">订单信息</div>
+                            <div class="Dcontent_imageBox_mainBox">
+                                <div class="Dcontent_imageBox_leftBox">
+                                    <img class="Dcontent_imageBox_leftBox_imgBox"
+                                        src="http://ai-img-1foo.oss-cn-guangzhou.aliyuncs.com/2024/04/01/1711951755.41028794f370fcb888f51e7c8e40fa2428a2b49.png">
                                 </div>
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        颜色:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">杏仁色</span>
-                                </div>
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        订单时间:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">2022-10-26 12:23:45</span>
-                                </div>
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        SKC:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">K20231020121</span>
-                                </div>
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        合同货期:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">2012-01-01</span>
-                                </div>
-                                <div class="Dcontent_imageBox_rightBox_contentBox">
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_title">
-                                        设计款号:
-                                    </span>
-                                    <span class="Dcontent_imageBox_rightBox_contentBox_desc">SH5465468411545</span>
+                                <div class="Dcontent_imageBox_rightBox">
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            订单编号:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">NB7896764654</span>
+                                    </div>
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            颜色:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">杏仁色</span>
+                                    </div>
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            订单时间:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">2022-10-26 12:23:45</span>
+                                    </div>
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            SKC:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">K20231020121</span>
+                                    </div>
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            合同货期:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">2012-01-01</span>
+                                    </div>
+                                    <div class="Dcontent_imageBox_rightBox_contentBox">
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_title">
+                                            设计款号:
+                                        </span>
+                                        <span class="Dcontent_imageBox_rightBox_contentBox_desc">SH5465468411545</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="tableMainBox">
-                        <el-table :header-cell-style="{ background: '#F6F7FA' }" :data="tableData" height="110" border
-                            style="width: 100%">
-                            <el-table-column v-for="(items, index) in columnsData" :key="index" :prop="items.prop"
-                                :label="items.label" :width="items.width">
-                            </el-table-column>
-                        </el-table>
+                        <div class="tableMainBox">
+                            <el-table :header-cell-style="{ background: '#F6F7FA' }" :data="tableData" height="110" border
+                                style="width: 100%">
+                                <el-table-column v-for="(items, index) in columnsData" :key="index" :prop="items.prop"
+                                    :label="items.label" :width="items.width">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+
+                        <!-- 價格信息 -->
+                        <AppDrawerPriceInfo />
+                        <!-- 審批流程 -->
+                        <AppapplyProcess />
                     </div>
+
                 </div>
-                <AppDrawerPriceInfo />
+
+
             </el-card>
+            <!-- 同SKC+同加工项目 -->
+            <AppSkcProject />
+            <AppSkcProject />
+
         </div>
 
+        <footer class="footer">
+            <div class="showSeleted">
+                已选 {{ 1 }} 条
+            </div>
+            <div class="btnGroup">
+                <el-button disabled>批量驳回</el-button>
+                <el-button disabled type="primary">批量审核</el-button>
+                <el-button>驳回</el-button>
+                <el-button type="primary">通过</el-button>
+            </div>
+        </footer>
     </el-drawer>
 </template>
 
 <script>
 import { columns } from './data'
 import AppDrawerPriceInfo from './AppDrawerPriceInfo.vue'
+import AppapplyProcess from './AppapplyProcess.vue'
+import AppSkcProject from './AppSkcProject.vue'
+import LTag from '../Common/LTag'
 export default {
     name: 'AppDrawer',
     data() {
@@ -112,7 +139,10 @@ export default {
         }
     },
     components: {
-        AppDrawerPriceInfo
+        AppDrawerPriceInfo,
+        AppapplyProcess,
+        AppSkcProject,
+        LTag
     },
     props: {
         drawer: Boolean,
@@ -127,9 +157,12 @@ export default {
 
         },
         changeHeight() {
+
             this.isChangeHeight = !this.isChangeHeight
 
-            this.$refs.Dcontent.style.height = this.isChangeHeight ? '' : 0
+            this.$refs.containerBox.style.height = this.isChangeHeight ? '20px' : '100%'
+
+
         }
     }
 }
@@ -236,5 +269,22 @@ export default {
 .el-table /deep/ td {
     padding: 6px 0;
 
+}
+
+.footer {
+    position: sticky;
+    bottom: 0px;
+    border-top: 1px solid #EDEFF2;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.btnGroup {
+    display: flex;
 }
 </style>
