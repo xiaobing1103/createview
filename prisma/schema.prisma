@@ -20,6 +20,22 @@ model User {
   password    String
   createTime  DateTime @default(now()) @map("create_time")
   updatedTime DateTime @updatedAt @map("updated_time")
+  // 关系字段
+  profileId   Int?
+  Profile     Profile?
 
   @@map("user")
+}
+
+// 一对一关系 :关系字段 标量字段/外键
+model Profile {
+  id     Int    @id @default(autoincrement())
+  age    String
+  gender String
+  phone  String
+  user   User   @relation(fields: [userId], references: [id])
+  // 标量字段 /外键
+  userId Int    @unique @map("user_id")
+
+  @@map("profile")
 }
